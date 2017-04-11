@@ -17,6 +17,7 @@ const port = 3000;
 app.use(express.static('./dist'));
 
 app.use('/', function(req, res) {
+	res.setHeader("Content-Type", "text/html");
 	res.sendFile(path.resolve('client/index.html'));
 });
 

@@ -24,9 +24,9 @@ class TodoInput extends Component {
 		return (
 			<div>
 				<form onSubmit={this.handleSubmit.bind(this)}>
-					<input type="text" placeholder="What should you todo?" value={this.state.inputText} 
+					<input type="text" placeholder="What should you do?" value={this.state.inputText} 
 					onChange={this.handleChange.bind(this)} />
-					<input type="submit" value="Add Todo" />
+					<input className="btn btn-default" type="submit" value="Add Todo" />
 				</form>
 			</div>
 		)

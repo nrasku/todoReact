@@ -1,12 +1,13 @@
 import { applyMiddleware, compose, createStore } from 'redux';
 import { createLogger } from 'redux-logger';
+import thunk from 'redux-thunk';
 
-import Reducer from './Reducer';
+import RootReducer from './reducers/IndexReducer';
 
 let finalCreateStore = compose(
-	applyMiddleware(createLogger())
+	applyMiddleware(thunk, createLogger())
 )(createStore)
 
-export default function configureStore(initialState = { todos: [] }) {
-	return finalCreateStore(Reducer, initialState);
+export default function configureStore(initialState = { todos: [], user: {} }) {
+	return finalCreateStore(RootReducer, initialState);
 }

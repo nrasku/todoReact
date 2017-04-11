@@ -11,10 +11,15 @@ class TodoItem extends Component {
 	}
 
 	render() {
+		const { completed, id, text } = this.props.todo;
+
+		const icon = completed ? "\u2714" : "\u2716"
+
 		return (
-			<li>
-			    <div>{this.props.todo.text}</div>
-			    <button onClick={this.handleComplete.bind(this)}>Completed</button>
+			<li style={{listStyleType: 'none'}}>
+			    <span>{text}</span>
+			    <a href="#"><span onClick={this.handleComplete.bind(this)}>{icon}</span></a>
+			    <br/>
 			    <button onClick={this.handleDelete.bind(this)}>Delete</button>
 			</li>
 		)
